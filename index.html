@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>متین کامیسن | صفحه شخصی</title>
+<style>
+:root{--bg:#050510;--panel:#0d1024;--blue:#00eaff;--cyan:#ff4df0;--text:#f5f4ff;--muted:#b8b4d8;--pink:#ff3bd4;--purple:#9b5cff}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 15% 10%,#16205c 0,transparent 28%),radial-gradient(ellipse at 90% 25%,#4a124c 0,transparent 25%),linear-gradient(145deg,#03030b,#08091a 55%,#10091c);color:var(--text);line-height:1.9}
+.wrap{width:min(1240px,94%);margin:auto}.hero{padding:70px 0 42px}.tag{display:inline-block;color:var(--cyan);border:1px solid var(--cyan);border-radius:30px;padding:4px 14px;font-size:13px;box-shadow:0 0 9px #00eaff66,inset 0 0 9px #00eaff22;text-shadow:0 0 9px var(--cyan)}
+h1{font-size:clamp(36px,7vw,64px);line-height:1.3;margin:18px 0 8px}.glow{color:var(--blue);text-shadow:0 0 8px var(--blue),0 0 20px var(--blue),0 0 42px #008cff}.lead{color:var(--muted);font-size:18px;max-width:680px}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}nav a{color:var(--text);text-decoration:none;padding:7px 13px;background:#10142b;border:1px solid #315c91;border-radius:12px;box-shadow:0 0 10px #00cfff22;transition:.2s}nav a:hover{border-color:var(--pink);box-shadow:0 0 8px var(--pink),0 0 20px #ff3bd455;color:#fff}
+section{margin:30px 0;padding:32px;background:linear-gradient(145deg,#10152bea,#111025ee);border:1px solid #285b83;border-radius:20px;box-shadow:0 0 14px #00d9ff20,0 12px 35px #0007;position:relative;overflow:hidden}section:before{content:'';position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--pink),transparent);opacity:.9}
+h2{margin-top:0;color:var(--cyan);font-size:23px;text-shadow:0 0 10px #ff4df077}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.tile{padding:16px;border-radius:15px;background:linear-gradient(145deg,#131d38,#17132c);border:1px solid #31517a;box-shadow:inset 0 0 18px #00d9ff0b,0 0 12px #00d9ff12;transition:.2s}.tile:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:0 0 9px #ff3bd477,0 0 22px #00d9ff33}.tile b{display:block;color:#fff;margin-bottom:5px}.tile span{color:var(--muted);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{background:#111d39;color:#bceeff;border:1px solid #246d91;padding:6px 12px;border-radius:30px;font-size:14px;box-shadow:0 0 10px #00d9ff24;text-shadow:0 0 7px #00d9ff66}
+footer{text-align:center;color:var(--muted);padding:30px 0 45px;font-size:13px;text-shadow:0 0 8px #00d9ff55}
+.small{color:var(--muted);font-size:13px}
+
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+*{transition:background-color .35s ease,border-color .3s ease,box-shadow .35s ease,color .25s ease}
+section,.tile,nav a,.chip,.tag{animation:rise .75s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero{position:relative}
+.hero:after{content:"";display:block;width:min(440px,85%);height:1px;margin-top:35px;background:linear-gradient(90deg,transparent,var(--blue),var(--pink),transparent);box-shadow:0 0 15px var(--blue)}
+button,.action{font:inherit;cursor:pointer;color:#fff;background:linear-gradient(100deg,#073c62,#4b1760);border:1px solid var(--blue);border-radius:13px;padding:10px 16px;box-shadow:0 0 12px #00d9ff33;transition:transform .2s ease,box-shadow .25s ease}
+button:hover,.action:hover{transform:translateY(-2px);box-shadow:0 0 12px var(--blue),0 0 25px #ff3bd455}
+button:active,.action:active{transform:scale(.97)}
+.interactive-bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+#soundState{color:var(--cyan);font-size:13px;align-self:center}
+.codebox{direction:ltr;text-align:left;white-space:pre-wrap;background:#050914;border:1px solid #235b75;border-radius:14px;padding:16px;color:#9fffe0;font:13px/1.8 Consolas,monospace;box-shadow:inset 0 0 18px #00eaff12;overflow:auto}
+.skill{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #263b55}
+.skill:last-child{border:0}
+.skill em{font-style:normal;color:var(--cyan);font-size:13px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Performance tuning: lightweight effects, no continuous animation loops */
+html{scroll-behavior:smooth}
+body{background:#070a16}
+section,.tile,.chip,.tag{animation:none!important}
+section{box-shadow:0 5px 18px #0005}
+.tile{box-shadow:none;will-change:transform}
+.tile:hover{transform:translateY(-2px);box-shadow:0 5px 14px #00d9ff22}
+nav a,button,.action,.tile{transition:transform .16s ease,border-color .16s ease,background-color .16s ease}
+.glow{text-shadow:0 0 8px #00eaff88}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:18px}
+.game-card{background:#0d1729;border:1px solid #245273;border-radius:16px;padding:16px}
+.game-card h3{margin:0 0 8px;color:#9be7ff;font-size:17px}
+.game-card p{color:var(--muted);font-size:13px;margin:0 0 12px}
+.game-status{min-height:28px;color:#b8f7ff;font-size:13px;margin-top:9px}
+.game-btn{margin:3px}
+#reactionPad{width:100%;min-height:90px;background:#13233b;border:1px solid #376b8b;border-radius:13px;color:#fff;font-size:16px}
+#reactionPad.ready{background:#145d46;border-color:#54ffb5}
+#reactionPad.go{background:#76234e;border-color:#ff5fb8}
+.memory-board{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-width:260px}
+.memory-card{aspect-ratio:1;background:#142843;border:1px solid #32688d;border-radius:10px;font-size:22px;padding:0}
+.memory-card.open{background:#23375b;border-color:#ff4df0}
+#clickTarget{position:relative;min-height:145px;background:#080f20;border:1px dashed #32708e;border-radius:13px;overflow:hidden}
+#targetDot{position:absolute;width:30px;height:30px;border-radius:50%;background:#00eaff;box-shadow:0 0 12px #00eaff;display:none}
+.game-input{width:100%;max-width:180px;background:#080f20;color:#fff;border:1px solid #376b8b;border-radius:9px;padding:9px;font:inherit}
+
+
+/* Extra polish: occasional, lightweight interaction animations */
+@keyframes softIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes neonPulse{0%,100%{box-shadow:0 0 7px #00eaff22}50%{box-shadow:0 0 16px #00eaff55}}
+@keyframes pop{0%{transform:scale(.94)}70%{transform:scale(1.035)}100%{transform:scale(1)}}
+section.reveal{animation:softIn .45s ease both}
+.tile:hover,.game-card:hover{border-color:#ff4df0;box-shadow:0 0 14px #ff4df033;transform:translateY(-3px)}
+.game-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.game-card:focus-within{border-color:#00eaff;box-shadow:0 0 12px #00eaff33}
+.game-status.flash{animation:pop .22s ease}
+.neon-divider{height:2px;border:0;background:linear-gradient(90deg,transparent,#00eaff,#ff4df0,transparent);margin:24px 0;opacity:.7}
+.ttt-board{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:210px}
+.ttt-cell{aspect-ratio:1;font-size:26px;padding:0;background:#101a31}
+.ttt-cell:disabled{opacity:1;cursor:default}
+.rps-choices{display:flex;gap:8px;flex-wrap:wrap}
+.rps-choices button{font-size:22px;min-width:58px}
+#tapCount{font-size:32px;color:#00eaff;text-shadow:0 0 12px #00eaff88}
+@media(max-width:600px){section{padding:21px;margin:18px 0}.hero{padding-top:42px}.game-grid{grid-template-columns:1fr}}
+
+</style>
+
+<style>
+/* NEON ARCADE UPGRADE */
+:root{--electric:#39f5ff;--hot:#ff3cac;--violet:#8b5cf6}
+body{background-image:radial-gradient(ellipse at 12% 8%,rgba(57,245,255,.13),transparent 32%),radial-gradient(ellipse at 88% 24%,rgba(255,60,172,.11),transparent 30%),linear-gradient(135deg,#070b18,#10102a 48%,#080d19);background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(100,220,255,.12) 4px);mix-blend-mode:screen}
+header,main,footer{position:relative;z-index:1}
+section{position:relative;overflow:hidden;border:1px solid rgba(57,245,255,.22);box-shadow:0 12px 45px rgba(0,0,0,.28),inset 0 0 28px rgba(57,245,255,.035);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+section:hover{border-color:rgba(57,245,255,.5);box-shadow:0 15px 48px rgba(0,0,0,.34),0 0 22px rgba(57,245,255,.09)}
+.tile,.game-card{position:relative;overflow:hidden;border:1px solid rgba(139,92,246,.32);background:linear-gradient(145deg,rgba(26,35,67,.92),rgba(12,17,36,.96));box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.tile:hover,.game-card:hover{transform:translateY(-5px);border-color:var(--electric);box-shadow:0 10px 30px rgba(57,245,255,.13)}
+.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:18px}
+.game-card{border-radius:18px;padding:17px;min-height:210px}
+.game-card h3{margin:0 0 8px;color:#7df8ff}
+.game-card p{color:#bdc9e8;font-size:.92rem;min-height:38px}
+.game-card button,.arcade-btn{border:1px solid rgba(57,245,255,.6);border-radius:11px;padding:9px 14px;background:linear-gradient(100deg,#123d59,#38205c);color:#fff;font-weight:800;cursor:pointer;transition:filter .15s,transform .15s}
+.game-card button:hover,.arcade-btn:hover{filter:brightness(1.3);transform:translateY(-2px)}
+.game-status{min-height:28px;margin-top:10px;color:#ffe38a;font-weight:700}
+.arena{height:145px;border:1px dashed rgba(57,245,255,.45);border-radius:13px;background:rgba(3,10,26,.65);position:relative;overflow:hidden;margin:10px 0;touch-action:manipulation}
+.arena-target{position:absolute;width:42px;height:42px;border:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#40efff 35%,#4d45d5 72%);box-shadow:0 0 20px #39f5ff;cursor:pointer}
+.big-number{font-size:2rem;font-weight:900;color:#fff;text-shadow:0 0 16px #39f5ff}
+.game-input{width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid #496b91;background:#080f22;color:white;margin:7px 0}
+.color-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.color-options button{width:48px;height:42px;border:2px solid #fff5;border-radius:10px;cursor:pointer}
+#dodgeCanvas{width:100%;height:170px;display:block;background:#060b1c;border:1px solid #365578;border-radius:12px;margin:10px 0;touch-action: none}
+@keyframes neonPulse{0%,100%{filter:drop-shadow(0 0 3px rgba(57,245,255,.25))}50%{filter:drop-shadow(0 0 9px rgba(57,245,255,.65))}}
+h1{animation:neonPulse 3.5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<header class="wrap hero">
+  <span class="tag">صفحه شخصی و گیمینگ</span>
+  <h1>سلام، من <span class="glow">متین</span> هستم 👋</h1>
+  <p class="lead">اینجا گوشه‌ای از دنیای من است؛ گیمینگ، ساخت محتوا، ایده‌های خلاقانه و مسیر پیشرفت با برند «متین کامیسن».</p>
+  <nav><a href="#about">درباره من</a><a href="#gaming">گیمینگ</a><a href="#content">تولید محتوا</a><a href="#tech">برنامه‌نویسی و سایبری</a><a href="#favorites">علاقه‌مندی‌ها</a></nav>
+  <div class="interactive-bar"><button id="soundBtn" type="button">🔊 فعال‌کردن صدای کلیک</button><button id="glowBtn" type="button">✨ تغییر حالت نور</button><span id="soundState">صدای کلیک خاموش است</span></div>
+</header>
+<main class="wrap">
+<section id="about">
+<h2>✨ درباره من</h2>
+<p>من به دنیای بازی‌ها و ساختن چیزهای تازه علاقه دارم. دوست دارم مهارت‌هایم را قدم‌به‌قدم بهتر کنم، ایده‌هایم را به پروژه تبدیل کنم و در مسیر تولید محتوا تجربه‌های جدید به دست بیاورم.</p>
+</section>
+<section id="gaming">
+<h2>🎮 دنیای گیم من</h2>
+<div class="grid">
+<div class="tile"><b>GTA San Andreas</b><span>گشت‌وگذار، آزادی عمل و ماجراجویی.</span></div>
+<div class="tile"><b>Counter-Strike 1.6 و CS2</b><span>بازی‌های رقابتی و خاطره‌انگیز.</span></div>
+<div class="tile"><b>Minecraft</b><span>ساخت‌وساز، خلاقیت و پروژه‌های شخصی.</span></div>
+</div>
+</section>
+<section id="content">
+<h2>🎥 متین کامیسن</h2>
+<p>برند من برای فعالیت آنلاین و ساخت محتوای گیمینگ است. به ویدیوهای گیمینگ، چالش‌ها، پروژه‌های شخصی و پیشرفت در استریم علاقه دارم. دوست دارم با ابزارهای سبک و کم‌هزینه، کیفیت کارم را بهتر کنم.</p>
+<div class="chips"><span class="chip">ویدیوهای گیمینگ</span><span class="chip">چالش‌ها</span><span class="chip">پروژه‌های شخصی</span><span class="chip">استریم</span><span class="chip">آپارات</span></div>
+</section>
+
+<section id="tech">
+<h2>💻 برنامه‌نویسی و دنیای سایبری</h2>
+<p>به ساختن برنامه‌ها، یادگیری کدنویسی و شناخت امنیت دیجیتال علاقه دارم. هدفم اینه قدم‌به‌قدم مهارت‌هام رو بیشتر کنم و از فناوری برای ساخت پروژه‌های خلاقانه استفاده کنم.</p>
+<div class="grid">
+<div class="tile"><b>⌨️ برنامه‌نویسی</b><span>یادگیری HTML، CSS و JavaScript برای طراحی سایت و ساخت ابزارهای ساده.</span></div>
+<div class="tile"><b>🛡️ امنیت سایبری</b><span>آشنایی با امنیت حساب‌ها، رمزهای قوی، حریم خصوصی و تمرین‌های قانونی در محیط‌های آموزشی.</span></div>
+<div class="tile"><b>🌐 وب و شبکه</b><span>شناخت نحوه کار وب‌سایت‌ها، اینترنت و اصول پایه شبکه.</span></div>
+</div>
+<h2 style="margin-top:22px">🧪 گوشه کدنویسی من</h2>
+<p>یک نمونه خیلی کوچک JavaScript؛ با زدن دکمه می‌تونی پیام تعاملی صفحه رو تغییر بدی:</p>
+<div class="codebox">const message = "سلام از دنیای کدنویسی!";\ndocument.querySelector("#demoText").textContent = message;</div>
+<div class="interactive-bar"><button id="demoBtn" type="button">اجرای نمونه کد ▶</button><span id="demoText" class="small">منتظر اجرای کد...</span></div>
+<div class="skill"><span>طراحی وب</span><em>در حال یادگیری</em></div>
+<div class="skill"><span>JavaScript</span><em>در حال یادگیری</em></div>
+<div class="skill"><span>امنیت دیجیتال</span><em>در حال یادگیری</em></div>
+</section>
+
+
+<section id="arcade">
+<h2>🕹️ آرکید متین | مینی‌گیم‌های سریع</h2>
+<p>چند بازی کوچیک و سبک که مستقیم داخل مرورگر اجرا می‌شن. رکوردها فقط روی همین دستگاه ذخیره می‌شن.</p>
+<div class="game-grid">
+  <div class="game-card">
+    <h3>⚡ واکنش سریع</h3>
+    <p>وقتی دکمه سبز شد، سریع کلیک کن. قبل از سبز شدن نزن!</p>
+    <button id="reactionStart" class="game-btn">شروع بازی</button>
+    <button id="reactionPad" disabled>برای شروع بزن</button>
+    <div id="reactionStatus" class="game-status">رکورد: هنوز ثبت نشده</div>
+  </div>
+  <div class="game-card">
+    <h3>🎯 شکار نقطه</h3>
+    <p>در ۱۵ ثانیه تا می‌تونی نقطه نورانی رو بگیر.</p>
+    <button id="targetStart" class="game-btn">شروع ۱۵ ثانیه‌ای</button>
+    <div id="clickTarget"><button id="targetDot" aria-label="نقطه هدف"></button></div>
+    <div id="targetStatus" class="game-status">امتیاز: ۰</div>
+  </div>
+  <div class="game-card">
+    <h3>🧠 حافظه تصویری</h3>
+    <p>جفت شکل‌های یکسان رو پیدا کن. تلاش کن با حرکت کمتر تمومش کنی.</p>
+    <button id="memoryReset" class="game-btn">چیدن دوباره</button>
+    <div id="memoryBoard" class="memory-board" aria-label="صفحه بازی حافظه"></div>
+    <div id="memoryStatus" class="game-status">حرکت‌ها: ۰</div>
+  </div>
+  <div class="game-card">
+    <h3>🔢 حدس عدد</h3>
+    <p>من یک عدد بین ۱ تا ۳۰ انتخاب کردم. می‌تونی پیداش کنی؟</p>
+    <input id="guessInput" class="game-input" type="number" min="1" max="30" placeholder="عددت رو بنویس">
+    <button id="guessBtn" class="game-btn">حدس بزن</button>
+    <button id="guessReset" class="game-btn">بازی تازه</button>
+    <div id="guessStatus" class="game-status">منتظر حدس توام!</div>
+  </div>
+</div>
+</section>
+
+<section id="favorites">
+<h2>💙 چیزهایی که دوست دارم</h2>
+<div class="grid">
+<div class="tile"><b>استایل مورد علاقه</b><span>ترکیب سفید، آبی و مشکی با حال‌وهوای گیمینگ و سایبرپانک.</span></div>
+<div class="tile"><b>علاقه‌مندی‌ها</b><span>گربه‌ها، بوی خاک خیس بعد از باران و دنیای خودروها.</span></div>
+<div class="tile"><b>خودروهای مورد علاقه</b><span>سمند EF7 و BMW i8.</span></div>
+<div class="tile"><b>موسیقی</b><span>BTS و به‌خصوص تهیونگ.</span></div>
+</div>
+</section>
+<section>
+<h2>🚀 هدف‌های من</h2>
+<p>پیشرفت در درس و مهارت‌ها، ساخت ویدیوهای بهتر، تجربه استریم و تبدیل ایده‌های کوچک به پروژه‌های جذاب.</p>
+</section>
+<p class="small">این صفحه یک معرفی عمومی و نمونه است. پیش از انتشار آنلاین، اطلاعات شخصی مثل شماره تلفن، نشانی خانه، نام مدرسه، رمزها یا اطلاعات خصوصی را اضافه نکن.</p>
+
+<section id="mega-arcade">
+<h2>🕹️ مگا آرکید نئون | مرحله‌ی بعدی!</h2>
+<p>شش چالش تازه؛ رکورد بزن، تمرین کن و امتیازت رو بالا ببر. همه‌ی بازی‌ها داخل همین صفحه اجرا می‌شن.</p>
+<div class="game-grid">
+ <article class="game-card">
+  <h3>🎯 شکار هدف</h3><p>در ۱۵ ثانیه تا می‌تونی هدف نئونی رو بزن!</p>
+  <div class="arena" id="aimArena"><button class="arena-target" id="aimTarget" aria-label="هدف" hidden></button></div>
+  <button id="aimStart">شروع چالش</button><div class="game-status" id="aimStatus">آماده‌ای؟</div>
+ </article>
+ <article class="game-card">
+  <h3>⚡ تست واکنش</h3><p>صبر کن تا صفحه سبز بشه، بعد سریع کلیک کن.</p>
+  <button id="reactStart">شروع</button><div class="arena" id="reactArena" style="display:grid;place-items:center;color:#fff;font-weight:900">منتظر علامت باش...</div>
+  <div class="game-status" id="reactStatus">هنوز شروع نکردی.</div>
+ </article>
+ <article class="game-card">
+  <h3>🧠 حساب برق‌آسا</h3><p>جواب درست مسئله رو وارد کن و زنجیره امتیاز بساز.</p>
+  <div class="big-number" id="mathQuestion">؟ + ؟</div><input class="game-input" id="mathAnswer" inputmode="numeric" placeholder="جواب...">
+  <button id="mathCheck">بررسی جواب</button><div class="game-status" id="mathStatus">امتیاز: ۰</div>
+ </article>
+ <article class="game-card">
+  <h3>🎨 رنگ درست رو پیدا کن</h3><p>اسم رنگ رو بخون و روی رنگ متن کلیک کن؛ حواست به تله‌ها باشه!</p>
+  <div class="big-number" id="colorWord">آبی</div><div class="color-options" id="colorOptions"></div>
+  <div class="game-status" id="colorStatus">امتیاز: ۰</div>
+ </article>
+ <article class="game-card">
+  <h3>⌨️ تایپ سرعتی</h3><p>عبارت نمایش‌داده‌شده رو دقیق تایپ کن.</p>
+  <div class="big-number" id="typePhrase">متین کامیسن</div><input class="game-input" id="typeInput" placeholder="اینجا تایپ کن...">
+  <button id="typeNew">عبارت جدید</button><div class="game-status" id="typeStatus">منتظر شروع...</div>
+ </article>
+ <article class="game-card">
+  <h3>🚀 جاخالی نئون</h3><p>با لمس یا حرکت ماوس سفینه رو جابه‌جا کن و از مانع‌ها دوری کن.</p>
+  <canvas id="dodgeCanvas" width="520" height="170"></canvas>
+  <button id="dodgeStart">شروع بازی</button><div class="game-status" id="dodgeStatus">امتیاز: ۰</div>
+ </article>
+</div>
+</section>
+
+</main>
+<footer>ساخته‌شده برای متین کامیسن · با حال‌وهوای آبی و سایبرپانک 💠</footer>
+
+<script>
+(() => {
+  let soundOn = false;
+  let audioCtx = null;
+  const state = document.getElementById('soundState');
+  function clickTone(){
+    if(!soundOn) return;
+    try{
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if(audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(660, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.07);
+      gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.055, audioCtx.currentTime + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.11);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.12);
+    }catch(e){}
+  }
+  document.getElementById('soundBtn').addEventListener('click', () => {
+    soundOn = !soundOn;
+    state.textContent = soundOn ? 'صدای کلیک روشن است 🔊' : 'صدای کلیک خاموش است';
+    document.getElementById('soundBtn').textContent = soundOn ? '🔇 خاموش‌کردن صدای کلیک' : '🔊 فعال‌کردن صدای کلیک';
+    if(soundOn) clickTone();
+  });
+  document.addEventListener('click', e => {
+    if(e.target.closest('a,button')) clickTone();
+  });
+  document.getElementById('glowBtn').addEventListener('click', () => {
+    document.body.classList.toggle('soft-glow');
+  });
+  document.getElementById('demoBtn').addEventListener('click', () => {
+    document.getElementById('demoText').textContent = 'سلام از دنیای کدنویسی! 🚀';
+  });
+})();
+</script>
+<style>
+body.soft-glow section{box-shadow:0 0 22px #00eaff55,0 0 34px #ff3bd422}
+body.soft-glow .glow{ text-shadow:0 0 10px var(--blue),0 0 28px var(--pink),0 0 48px var(--blue)}
+</style>
+
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+
+  // Reaction test
+  let reactionTimer = null, reactionStartAt = 0, reactionMode = 'idle';
+  let best = Number(localStorage.getItem('matinReactionBest') || 0);
+  $('reactionStatus').textContent = best ? `بهترین رکورد: ${best} میلی‌ثانیه` : 'رکورد: هنوز ثبت نشده';
+  $('reactionStart').addEventListener('click', () => {
+    clearTimeout(reactionTimer);
+    reactionMode = 'wait';
+    $('reactionPad').disabled = false;
+    $('reactionPad').className = '';
+    $('reactionPad').textContent = 'صبر کن تا سبز بشه...';
+    $('reactionStatus').textContent = 'آماده باش!';
+    reactionTimer = setTimeout(() => {
+      if (reactionMode !== 'wait') return;
+      reactionMode = 'go';
+      reactionStartAt = performance.now();
+      $('reactionPad').classList.add('ready');
+      $('reactionPad').textContent = 'الان کلیک کن!';
+    }, 1200 + Math.random() * 2600);
+  });
+  $('reactionPad').addEventListener('click', () => {
+    if (reactionMode === 'wait') {
+      clearTimeout(reactionTimer);
+      reactionMode = 'idle';
+      $('reactionPad').textContent = 'زود زدی! دوباره امتحان کن';
+      $('reactionStatus').textContent = 'صبر کن تا سبز بشه.';
+    } else if (reactionMode === 'go') {
+      const ms = Math.round(performance.now() - reactionStartAt);
+      reactionMode = 'idle';
+      $('reactionPad').disabled = true;
+      $('reactionPad').textContent = `${ms} ms`;
+      if (!best || ms < best) {
+        best = ms;
+        localStorage.setItem('matinReactionBest', String(best));
+      }
+      $('reactionStatus').textContent = `زمان تو: ${ms} میلی‌ثانیه | رکورد: ${best} میلی‌ثانیه`;
+    }
+  });
+
+  // Click target
+  let targetScore = 0, targetTime = 15, targetInterval = null, targetActive = false;
+  function moveTarget() {
+    const area = $('clickTarget'), dot = $('targetDot');
+    const maxX = Math.max(0, area.clientWidth - 36), maxY = Math.max(0, area.clientHeight - 36);
+    dot.style.left = Math.round(Math.random() * maxX) + 'px';
+    dot.style.top = Math.round(Math.random() * maxY) + 'px';
+  }
+  $('targetStart').addEventListener('click', () => {
+    clearInterval(targetInterval);
+    targetScore = 0; targetTime = 15; targetActive = true;
+    $('targetStatus').textContent = 'امتیاز: ۰ | زمان: ۱۵';
+    $('targetDot').style.display = 'block'; moveTarget();
+    targetInterval = setInterval(() => {
+      targetTime--;
+      $('targetStatus').textContent = `امتیاز: ${targetScore} | زمان: ${targetTime}`;
+      if (targetTime <= 0) {
+        clearInterval(targetInterval); targetActive = false;
+        $('targetDot').style.display = 'none';
+        $('targetStatus').textContent = `تموم شد! امتیاز نهایی: ${targetScore}`;
+      }
+    }, 1000);
+  });
+  $('targetDot').addEventListener('click', e => {
+    e.stopPropagation();
+    if (!targetActive) return;
+    targetScore++; moveTarget();
+    $('targetStatus').textContent = `امتیاز: ${targetScore} | زمان: ${targetTime}`;
+  });
+
+  // Memory pairs
+  const symbols = ['🚀','🎮','👾','💎','🐱','⚡','🎧','🛸'];
+  let first = null, lock = false, moves = 0, matched = 0;
+  function setupMemory() {
+    const deck = [...symbols, ...symbols].sort(() => Math.random() - .5);
+    first = null; lock = false; moves = 0; matched = 0;
+    $('memoryStatus').textContent = 'حرکت‌ها: ۰';
+    $('memoryBoard').innerHTML = '';
+    deck.forEach((symbol, index) => {
+      const btn = document.createElement('button');
+      btn.className = 'memory-card'; btn.textContent = '?';
+      btn.dataset.symbol = symbol; btn.dataset.index = index;
+      btn.addEventListener('click', () => {
+        if (lock || btn.classList.contains('open') || btn.disabled) return;
+        btn.classList.add('open'); btn.textContent = symbol;
+        if (!first) { first = btn; return; }
+        moves++; $('memoryStatus').textContent = `حرکت‌ها: ${moves}`;
+        if (first.dataset.symbol === btn.dataset.symbol) {
+          first.disabled = true; btn.disabled = true; first = null; matched += 2;
+          if (matched === 16) $('memoryStatus').textContent = `آفرین! با ${moves} حرکت همه جفت‌ها رو پیدا کردی 🎉`;
+        } else {
+          lock = true; const previous = first; first = null;
+          setTimeout(() => {
+            previous.classList.remove('open'); previous.textContent = '?';
+            btn.classList.remove('open'); btn.textContent = '?'; lock = false;
+          }, 650);
+        }
+      });
+      $('memoryBoard').appendChild(btn);
+    });
+  }
+  $('memoryReset').addEventListener('click', setupMemory);
+  setupMemory();
+
+  // Guess the number
+  let secret = 1 + Math.floor(Math.random() * 30), guesses = 0;
+  function resetGuess() {
+    secret = 1 + Math.floor(Math.random() * 30); guesses = 0;
+    $('guessInput').value = ''; $('guessStatus').textContent = 'عدد جدید انتخاب شد؛ شروع کن!';
+  }
+  $('guessBtn').addEventListener('click', () => {
+    const value = Number($('guessInput').value);
+    if (!Number.isInteger(value) || value < 1 || value > 30) {
+      $('guessStatus').textContent = 'یک عدد صحیح بین ۱ تا ۳۰ وارد کن.'; return;
+    }
+    guesses++;
+    if (value === secret) $('guessStatus').textContent = `درست گفتی! با ${guesses} حدس پیداش کردی 🏆`;
+    else $('guessStatus').textContent = value < secret ? 'عدد مخفی بزرگ‌تره ⬆️' : 'عدد مخفی کوچک‌تره ⬇️';
+  });
+  $('guessReset').addEventListener('click', resetGuess);
+})();
+</script>
+
+
+<script>
+(() => {
+ const $=id=>document.getElementById(id);
+ // Tic tac toe: human X, simple computer O
+ let board=Array(9).fill(''), tttOver=false;
+ const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+ function winner(b){for(const line of wins){const [a,c,d]=line;if(b[a]&&b[a]===b[c]&&b[a]===b[d])return b[a]}return b.every(Boolean)?'draw':null}
+ function drawTTT(){
+  $('tttBoard').innerHTML='';
+  board.forEach((v,i)=>{const b=document.createElement('button');b.className='ttt-cell';b.textContent=v||'·';b.disabled=!!v||tttOver;b.addEventListener('click',()=>playTTT(i));$('tttBoard').appendChild(b)});
+ }
+ function playTTT(i){
+  if(board[i]||tttOver)return;board[i]='❌';let w=winner(board);
+  if(w){finishTTT(w);return}
+  const empty=board.map((v,i)=>v?null:i).filter(v=>v!==null);
+  if(empty.length){let move=empty.find(i=>{let t=[...board];t[i]='⭕';return winner(t)==='⭕'});
+   if(move===undefined)move=empty.find(i=>{let t=[...board];t[i]='❌';return winner(t)==='❌'});
+   if(move===undefined)move=empty[Math.floor(Math.random()*empty.length)];
+   board[move]='⭕';
+  }
+  w=winner(board);if(w)finishTTT(w);drawTTT();
+ }
+ function finishTTT(w){tttOver=true;$('tttStatus').textContent=w==='draw'?'مساوی شد!':w==='❌'?'بردی داش! 🏆':'این دست کامپیوتر برد؛ دوباره امتحان کن!';drawTTT()}
+ function resetTTT(){board=Array(9).fill('');tttOver=false;$('tttStatus').textContent='نوبت توئه: ❌';drawTTT()}
+ $('tttReset').addEventListener('click',resetTTT);resetTTT();
+
+ // Rock paper scissors
+ let you=0,bot=0;const choices=['سنگ','کاغذ','قیچی'];
+ document.querySelectorAll('[data-rps]').forEach(b=>b.addEventListener('click',()=>{
+  const a=b.dataset.rps,c=choices[Math.floor(Math.random()*3)];
+  let result=a===c?'مساوی!':((a==='سنگ'&&c==='قیچی')||(a==='کاغذ'&&c==='سنگ')||(a==='قیچی'&&c==='کاغذ'))?'این دور رو بردی!':'این دور رو کامپیوتر برد!';
+  if(result==='این دور رو بردی!')you++;if(result==='این دور رو کامپیوتر برد!')bot++;
+  $('rpsStatus').textContent=`تو: ${a} | کامپیوتر: ${c} — ${result}`;$('rpsScore').textContent=`تو ${you} - کامپیوتر ${bot}`;
+ }));
+
+ // 10-second tap challenge
+ let taps=0,tapOn=false,tapTimer=null,bestTap=Number(localStorage.getItem('matinTapBest')||0);
+ $('tapStatus').textContent=`رکورد: ${bestTap}`;
+ $('tapStart').addEventListener('click',()=>{
+  clearTimeout(tapTimer);taps=0;tapOn=true;$('tapCount').textContent='۰';$('tapButton').disabled=false;$('tapStatus').textContent='۱۰ ثانیه فرصت داری!';
+  tapTimer=setTimeout(()=>{tapOn=false;$('tapButton').disabled=true;if(taps>bestTap){bestTap=taps;localStorage.setItem('matinTapBest',bestTap)}$('tapStatus').textContent=`تموم شد! ${taps} کلیک | رکورد: ${bestTap}`},10000);
+ });
+ $('tapButton').addEventListener('click',()=>{if(!tapOn)return;taps++;$('tapCount').textContent=taps});
+
+ // Scrambled word mini-game
+ const words=['ماتین','گیمینگ','کدنویسی','گربه','رایانه','سایبر'];
+ let currentWord='';
+ function newWord(){currentWord=words[Math.floor(Math.random()*words.length)];let chars=[...currentWord];for(let i=chars.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[chars[i],chars[j]]=[chars[j],chars[i]]} $('wordScramble').textContent=chars.join(' ');$('wordInput').value='';$('wordStatus').textContent='کلمه رو حدس بزن!'}
+ $('wordNew').addEventListener('click',newWord);
+ $('wordCheck').addEventListener('click',()=>{$('wordStatus').textContent=$('wordInput').value.trim()===currentWord?'درست گفتی! 🎉':'نه، دوباره تلاش کن.'});
+ newWord();
+
+ // Sliding number puzzle
+ let puzzle=[],moves=0;
+ function renderPuzzle(){
+  $('puzzleBoard').innerHTML='';
+  puzzle.forEach((v,i)=>{const b=document.createElement('button');b.className='ttt-cell';b.textContent=v||'';b.disabled=!v;b.addEventListener('click',()=>{
+   const blank=puzzle.indexOf(0),r=Math.floor(i/3),c=i%3,br=Math.floor(blank/3),bc=blank%3;
+   if(Math.abs(r-br)+Math.abs(c-bc)===1){[puzzle[i],puzzle[blank]]=[puzzle[blank],puzzle[i]];moves++;renderPuzzle()}
+  });$('puzzleBoard').appendChild(b)});
+  $('puzzleStatus').textContent=`حرکت‌ها: ${moves}${puzzle.every((v,i)=>v===((i+1)%9))?' | حلش کردی! 🏆':''}`;
+ }
+ function shufflePuzzle(){puzzle=[1,2,3,4,5,6,7,8,0];for(let k=0;k<80;k++){let z=puzzle.indexOf(0),r=Math.floor(z/3),c=z%3,ns=[];if(r)ns.push(z-3);if(r<2)ns.push(z+3);if(c)ns.push(z-1);if(c<2)ns.push(z+1);let n=ns[Math.floor(Math.random()*ns.length)];[puzzle[z],puzzle[n]]=[puzzle[n],puzzle[z]]}moves=0;renderPuzzle()}
+ $('puzzleReset').addEventListener('click',shufflePuzzle);shufflePuzzle();
+
+ // Color sequence memory
+ let seq=[],input=[],seqBusy=false;
+ const seqButtons=[...document.querySelectorAll('[data-seq]')];
+ function flashSeq(index){const b=seqButtons[index];b.style.filter='brightness(2)';setTimeout(()=>b.style.filter='',220)}
+ function nextSeq(){
+  seq.push(Math.floor(Math.random()*4));input=[];seqBusy=true;$('seqStatus').textContent=`مرحله: ${seq.length} — نگاه کن!`;
+  seq.forEach((v,i)=>setTimeout(()=>flashSeq(v),450+i*650));
+  setTimeout(()=>{seqBusy=false;$('seqStatus').textContent='حالا توالی رو تکرار کن!'},450+seq.length*650);
+ }
+ $('seqStart').addEventListener('click',()=>{seq=[];nextSeq()});
+ seqButtons.forEach(b=>b.addEventListener('click',()=>{
+  if(seqBusy||!seq.length)return;let v=Number(b.dataset.seq);input.push(v);flashSeq(v);
+  if(v!==seq[input.length-1]){$('seqStatus').textContent='اشتباه شد! از نو شروع کن.';seq=[];return}
+  if(input.length===seq.length){$('seqStatus').textContent='آفرین! مرحله بعد...';seqBusy=true;setTimeout(nextSeq,650)}
+ }));
+})();
+</script>
+
+
+<script>
+(() => {
+ const sections=document.querySelectorAll('main section');
+ if(!('IntersectionObserver' in window)) return;
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){entry.target.classList.add('reveal');observer.unobserve(entry.target)}
+  });
+ },{threshold:0.08});
+ sections.forEach(s=>observer.observe(s));
+})();
+</script>
+
+
+<script>
+(()=>{
+ const $=id=>document.getElementById(id);
+ // Aim trainer
+ let aimTimer=null,aimScore=0,aimOn=false;
+ function moveAim(){const a=$('aimArena'),t=$('aimTarget');t.style.left=Math.random()*(a.clientWidth-44)+'px';t.style.top=Math.random()*(a.clientHeight-44)+'px'}
+ $('aimStart').onclick=()=>{clearInterval(aimTimer);aimScore=0;aimOn=true;$('aimTarget').hidden=false;moveAim();$('aimStatus').textContent='۱۵ ثانیه فرصت داری!';aimTimer=setTimeout(()=>{aimOn=false;$('aimTarget').hidden=true;$('aimStatus').textContent='پایان! امتیاز تو: '+aimScore},15000)};
+ $('aimTarget').onclick=()=>{if(aimOn){aimScore++;$('aimStatus').textContent='امتیاز: '+aimScore;moveAim()}};
+ // Reaction
+ let reactMode='idle',reactTimeout=null,reactAt=0;
+ $('reactStart').onclick=()=>{clearTimeout(reactTimeout);reactMode='wait';$('reactArena').style.background='#7b2638';$('reactArena').textContent='صبر کن...';$('reactStatus').textContent='وقتی سبز شد کلیک کن!';reactTimeout=setTimeout(()=>{if(reactMode==='wait'){reactMode='go';reactAt=performance.now();$('reactArena').style.background='#12613c';$('reactArena').textContent='حالا کلیک کن!'}},1200+Math.random()*2800)};
+ $('reactArena').onclick=()=>{if(reactMode==='go'){$('reactStatus').textContent='زمان واکنش: '+Math.round(performance.now()-reactAt)+' میلی‌ثانیه ⚡';reactMode='done'}else if(reactMode==='wait'){$('reactStatus').textContent='زود کلیک کردی! دوباره تلاش کن.';reactMode='done';clearTimeout(reactTimeout)}};
+ // Math sprint
+ let ma=0,mb=0,mathScore=0;
+ function mathNext(){ma=1+Math.floor(Math.random()*20);mb=1+Math.floor(Math.random()*20);$('mathQuestion').textContent=ma+' + '+mb+' = ؟';$('mathAnswer').value=''}
+ $('mathCheck').onclick=()=>{if(Number($('mathAnswer').value)===ma+mb){mathScore++;$('mathStatus').textContent='آفرین! امتیاز: '+mathScore;mathNext()}else $('mathStatus').textContent='یه بار دیگه فکر کن 🙂'};
+ $('mathAnswer').addEventListener('keydown',e=>{if(e.key==='Enter')$('mathCheck').click()});mathNext();
+ // Color match
+ const colors=[['قرمز','#ff405e'],['آبی','#348cff'],['سبز','#31d68b'],['زرد','#ffdb4d']];
+ let colorScore=0,correctColor='';
+ function colorNext(){const shown=colors[Math.floor(Math.random()*4)],opts=[...colors].sort(()=>Math.random()-.5);correctColor=shown[1];$('colorWord').textContent=shown[0];$('colorWord').style.color=opts[Math.floor(Math.random()*4)][1];$('colorOptions').innerHTML='';opts.forEach(c=>{const b=document.createElement('button');b.style.background=c[1];b.setAttribute('aria-label',c[0]);b.onclick=()=>{if(c[1]===correctColor){colorScore++;$('colorStatus').textContent='درست! امتیاز: '+colorScore}else{$('colorStatus').textContent='این یکی نبود! امتیاز: '+colorScore}colorNext()};$('colorOptions').appendChild(b)})}
+ colorNext();
+ // Typing challenge
+ const phrases=['متین کامیسن','من عاشق بازی‌سازی هستم','هر روز یک قدم جلوتر','گیم و خلاقیت','سلام به دنیای نئون'];
+ function typeNew(){const p=phrases[Math.floor(Math.random()*phrases.length)];$('typePhrase').textContent=p;$('typeInput').value='';$('typeStatus').textContent='شروع کن!'}
+ $('typeNew').onclick=typeNew;$('typeInput').addEventListener('input',()=>{const target=$('typePhrase').textContent;if($('typeInput').value===target)$('typeStatus').textContent='عالی بود! دقیق و سریع ⌨️'});typeNew();
+ // Dodge game: simple canvas loop, no external assets
+ const c=$('dodgeCanvas'),ctx=c.getContext('2d');let running=false,player=260,blocks=[],score=0,last=0,raf=0;
+ function drawDodge(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='#39f5ff';ctx.shadowColor='#39f5ff';ctx.shadowBlur=14;ctx.beginPath();ctx.moveTo(player,145);ctx.lineTo(player-13,166);ctx.lineTo(player+13,166);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#ff4b9b';blocks.forEach(b=>ctx.fillRect(b.x,b.y,24,24));ctx.fillStyle='#fff';ctx.font='15px sans-serif';ctx.fillText('امتیاز '+score,12,20)}
+ function dodgeFrame(ts){if(!running)return;const dt=Math.min(35,ts-last||16);last=ts;if(Math.random()<.035)blocks.push({x:Math.random()*(c.width-24),y:-25});blocks.forEach(b=>b.y+=dt*.19);blocks=blocks.filter(b=>b.y<190);score+=1;const hit=blocks.some(b=>b.y>125&&b.y<166&&Math.abs((b.x+12)-player)<23);drawDodge();if(hit){running=false;$('dodgeStatus').textContent='برخورد کردی! امتیاز: '+score+' — دوباره امتحان کن';return}raf=requestAnimationFrame(dodgeFrame)}
+ function setPlayer(e){const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width*c.width;player=Math.max(14,Math.min(c.width-14,x));if(!running)drawDodge()}
+ c.addEventListener('pointermove',e=>{if(e.buttons||e.pointerType==='touch')setPlayer(e)});c.addEventListener('pointerdown',setPlayer);
+ $('dodgeStart').onclick=()=>{cancelAnimationFrame(raf);running=true;score=0;blocks=[];player=c.width/2;last=0;$('dodgeStatus').textContent='حرکت کن و جاخالی بده!';raf=requestAnimationFrame(dodgeFrame);};
+ drawDodge();
+})();
+</script>
+
+</body>
+</html>
